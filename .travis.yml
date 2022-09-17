@@ -16,10 +16,10 @@ before_script:
 script:
   - docker --version # print the version for logging
   - docker-compose -f docker-compose-build.yaml build --parallel
-  - docker tag reverseproxy bienvenuparfait/reverseproxy:latest 
-  - docker tag udagram-api-user bienvenuparfait/udagram-api-user:latest
-  - docker tag udagram-api-feed bienvenuparfait/udagram-api-feed:latest 
-  - docker tag udagram-frontend bienvenuparfait/udagram-frontend:latest
+  - docker tag reverseproxy bienvenuparfait/reverseproxy:v1
+  - docker tag udagram-api-user bienvenuparfait/udagram-api-user:v1
+  - docker tag udagram-api-feed bienvenuparfait/udagram-api-feed:v1 
+  - docker tag udagram-frontend bienvenuparfait/udagram-frontend:v1
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
