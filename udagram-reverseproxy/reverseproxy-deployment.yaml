@@ -15,7 +15,7 @@ spec:
         app: reverseproxy
     spec:
       containers:
-      - image: bienvenuparfait/reverseproxy
+      - image: bienvenuparfait/udagram-reverseproxy
         name: reverseproxy
         imagePullPolicy: Always          
         resources:
