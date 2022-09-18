@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "description": "",
   "main": "src/server.js",
-  "scripts": {
+  "scripts": {  
     "start": "node .",
     "tsc": "tsc",
     "dev": "ts-node-dev --respawn --transpile-only ./src/server.ts",
