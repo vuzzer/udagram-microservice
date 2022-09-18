@@ -9,4 +9,4 @@ RUN npm ci
 #GROUP application source
 COPY . .
 EXPOSE 8080
-CMD ["npm", "run", "prod"]
+CMD ["npm", "run", "dev"]
