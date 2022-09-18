@@ -18,16 +18,16 @@ script:
   - docker build -t udagram-api-user ./udagram-api-user
   - docker build -t udagram-api-feed ./udagram-api-feed
   - docker build -t udagram-frontend ./udagram-frontend
-  - docker build -t reverseproxy ./udagram-reverseproxy
-  - docker tag reverseproxy bienvenuparfait/reverseproxy:latest
-  - docker tag udagram-api-user bienvenuparfait/udagram-api-user:latest
-  - docker tag udagram-api-feed bienvenuparfait/udagram-api-feed:latest
-  - docker tag udagram-frontend bienvenuparfait/udagram-frontend:latest
+  - docker build -t reverseproxy ./simple-reverse-proxy
+  - docker tag reverseproxy bienvenuparfait/simple-reverse-proxy:v1
+  - docker tag udagram-api-user bienvenuparfait/udagram-api-user:v1
+  - docker tag udagram-api-feed bienvenuparfait/udagram-api-feed:v1
+  - docker tag udagram-frontend bienvenuparfait/udagram-frontend:v1
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push bienvenuparfait/reverseproxy
-  - docker push bienvenuparfait/udagram-api-user
-  - docker push bienvenuparfait/udagram-api-feed
-  - docker push bienvenuparfait/udagram-frontend
+  - docker push bienvenuparfait/simple-reverse-proxy:v1
+  - docker push bienvenuparfait/udagram-api-user:v1
+  - docker push bienvenuparfait/udagram-api-feed:v1
+  - docker push bienvenuparfait/udagram-frontend:v1
 
