@@ -1,0 +1,3 @@
+[submodule "simple-reverse-proxy"]
+	path = simple-reverse-proxy
+	url = https://github.com/vuzzer/simple-reverse-proxy.git
